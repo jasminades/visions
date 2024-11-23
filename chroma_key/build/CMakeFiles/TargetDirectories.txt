@@ -1,0 +1,4 @@
+/home/jasmina/Desktop/p42dedej-uco/ejercicio1/chroma_key/build/CMakeFiles/chroma_key.dir
+/home/jasmina/Desktop/p42dedej-uco/ejercicio1/chroma_key/build/CMakeFiles/chroma_key_test_common_code.dir
+/home/jasmina/Desktop/p42dedej-uco/ejercicio1/chroma_key/build/CMakeFiles/edit_cache.dir
+/home/jasmina/Desktop/p42dedej-uco/ejercicio1/chroma_key/build/CMakeFiles/rebuild_cache.dir
