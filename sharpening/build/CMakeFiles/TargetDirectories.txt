@@ -1,0 +1,4 @@
+/home/jasmina/Desktop/p42dedej-uco/exercise2/sharpening/build/CMakeFiles/sharpen.dir
+/home/jasmina/Desktop/p42dedej-uco/exercise2/sharpening/build/CMakeFiles/sharpening_test_common_code.dir
+/home/jasmina/Desktop/p42dedej-uco/exercise2/sharpening/build/CMakeFiles/edit_cache.dir
+/home/jasmina/Desktop/p42dedej-uco/exercise2/sharpening/build/CMakeFiles/rebuild_cache.dir
