@@ -1,0 +1,4 @@
+/home/jasmina/Desktop/p42dedej-uco/ejercicio2/cbg_process/build/CMakeFiles/cbg_process.dir
+/home/jasmina/Desktop/p42dedej-uco/ejercicio2/cbg_process/build/CMakeFiles/cbg_process_test_common_code.dir
+/home/jasmina/Desktop/p42dedej-uco/ejercicio2/cbg_process/build/CMakeFiles/edit_cache.dir
+/home/jasmina/Desktop/p42dedej-uco/ejercicio2/cbg_process/build/CMakeFiles/rebuild_cache.dir
