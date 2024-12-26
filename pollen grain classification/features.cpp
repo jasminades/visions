@@ -1,7 +1,4 @@
-/**
- *  @file features.cpp
- *  (C) 2022- FJMC fjmadrid@uco.es
- */
+
 #include <iostream>
 #include <exception>
 #include <fstream>
@@ -9,16 +6,10 @@
 #include <opencv2/highgui.hpp>
 #include "features.hpp"
 
-// TODO: add the include for each extractor to use.
-// Hint: use gray_levels_features.hpp and gray_levels_features.cpp as model to
-//   make yours.
+
 #include "gray_levels_features.hpp"
 #include "my_extractor.hpp"
 
-//#include "xxxxxx.hpp"
-
-// Remember: update CMakeLists.txt with the new files.
-//
 
 FEATURE_IDS
 FeaturesExtractor::get_extractor_type() const
@@ -43,13 +34,6 @@ cv::Ptr<FeaturesExtractor> FeaturesExtractor::create(FEATURE_IDS id)
         break;
     }
 
-        // TODO: add here 'cases' for your features.
-        // case FSIV_XXXXX: {
-        //    extractor = cv::makePtr<FeatureExtractor>(new XXXXX());
-        //    break;
-        // }
-        //
-
     default:
     {
         throw std::runtime_error("Error: unknown feature id.");
@@ -64,14 +48,14 @@ cv::Mat
 fsiv_extract_features(const cv::Mat &dt,
                       cv::Ptr<FeaturesExtractor> &extractor)
 {
-    // Process the first image to get the features dimension.
+  
     cv::Mat feature = extractor->extract_features(dt.row(0));
 
-    // Allocate memory.
+
     cv::Mat X(dt.rows, feature.cols, CV_32F);
     feature.copyTo(X.row(0));
 
-    // Process the rest of dt.
+
 #ifdef USE_OPENMP
 #pragma omp parallel for
 #endif
@@ -94,8 +78,7 @@ FeaturesExtractor::get_params() const
 
 void FeaturesExtractor::train(const cv::Mat &samples)
 {
-    // do nothing.
-    // Override this method in your class if it is needed.
+
     return;
 }
 
