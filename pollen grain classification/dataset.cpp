@@ -27,17 +27,16 @@ to_Mat(std::vector<std::uint8_t> const &labels)
 void fsiv_load_dataset(std::string &folder,
                        cv::Mat &X, cv::Mat &y, bool ignore_labels)
 {
-    // Images and labels
+    // images and labels
     std::vector<std::vector<std::uint8_t>> images;
     std::vector<std::uint8_t> labels;
 
-    // Label file
+    // label file
     std::string labels_csv = folder + ".csv";
 
-    // Load label file
+    // load label file
     std::ifstream label_file(labels_csv);
 
-    // debugging
     if(!label_file.is_open()){
         std::cerr<<"error: unable to open csv file"<<labels_csv<<std::endl;
     }
@@ -45,7 +44,7 @@ void fsiv_load_dataset(std::string &folder,
 
     std::getline(label_file, line);
 
-    // Load images/labels line by line
+    // load images/labels line by line
     while (std::getline(label_file, line))
     {
         std::stringstream line_stream(line);
@@ -75,7 +74,7 @@ void fsiv_load_dataset(std::string &folder,
 
             if (!ignore_labels)
             {
-                // debugging
+                
                    if(label == "unknown"){
                     labels.push_back(15);
                 }else{
@@ -195,7 +194,7 @@ void fsiv_save_predictions(std::string &path, cv::Mat &y){
     std::getline(label_file, line);
     predicted_file << line << "\n";
 
-    // Load images/labels line by line
+    // load images/labels line by line
     int i = 0;
     std::vector<std::int32_t> label_vector(y.begin<std::int32_t>(), y.end<std::int32_t>());
     while (std::getline(label_file, line))
