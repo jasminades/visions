@@ -1,0 +1,19 @@
+- to train the model
+
+
+ ./train_clf /home/jasmina/Desktop/p42dedej-uco/data/train /home/jasmina/Desktop/p42dedej-uco/data/valid /home/jasmina/Desktop/p42dedej-uco/data/test /home/jasmina/Desktop/p42dedej-uco/build/model.yml --clf=1 --svm_C=1.0 --svm_Gamma=0.5 --s_ratio=0.8
+
+
+
+- to test the classifier
+
+./test_clf /home/jasmina/Desktop/p42dedej-uco/data/valid /home/jasmina/Desktop/p42dedej-uco/build/model.yml --clf=1
+
+./test_clf /home/jasmina/Desktop/p42dedej-uco/data/test /home/jasmina/Desktop/p42dedej-uco/build/model.yml --clf=1
+
+
+
+
+
+
+
