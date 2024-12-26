@@ -1,7 +1,4 @@
-/**
- *  @file my_extractor.cpp
- *  (C) 2022- FJMC fjmadrid@uco.es
- */
+
 #include <opencv2/imgproc.hpp>
 #include "my_extractor.hpp"
 #include "gray_levels_features.hpp"
@@ -15,7 +12,7 @@ std::string MyExtractor::get_extractor_name() const
 MyExtractor::MyExtractor()
 {
     type_ = FSIV_MY_EXTRACTOR;
-    params_ = {0.0}; //by default use [0, 1] normalized gray levels.
+    params_ = {0.0}; 
 }
 
 MyExtractor::~MyExtractor() {}
