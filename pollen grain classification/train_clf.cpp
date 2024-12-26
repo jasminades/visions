@@ -1,9 +1,4 @@
-/*!
- This program trains a new model from the provided data samples.
 
- 2024: UPTATED by Rafael Berral
-
-*/
 
 #include <iostream>
 #include <sstream>
@@ -11,7 +6,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-//Includes para OpenCV, Descomentar según los módulo utilizados.
+
 #include <opencv2/core/core.hpp>
 #include <opencv2/core/utility.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -223,16 +218,16 @@ main (int argc, char* const* argv)
 
       std::cout << "Saving the model to '" << model_fname << "'." << std::endl;
       
-      // First, save the classifier's model.
+      // save the classifier's model
       fsiv_save_classifier_model(clsf, model_fname);
 
-      // Second, save the feature extractor model.
+      // save the feature extractor model
       extractor->save_model(model_fname);
       cv::FileStorage fs(model_fname, cv::FileStorage::APPEND);
       fs << "fsiv_random_seed" << static_cast<double>(seed);
       fs.release();
 
-      // Third, compute model size.
+      // compute model size
       size_t model_size = 0;
       if (fsiv_compute_file_size(model_fname, model_size))
       { 
