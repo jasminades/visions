@@ -1,7 +1,4 @@
-/**
- *  @file features.hpp
- *  (C) 2022- FJMC fjmadrid@uco.es
- */
+
 #pragma once
 #include <iostream>
 #include <string>
@@ -15,10 +12,7 @@ typedef enum {
     FSIV_NON_EXTRACTOR = 0,
     FSIV_GREY_LEVELS=1, // Use pixel grey levels [0,1].
     FSIV_MY_EXTRACTOR = 2,
-    //TODO: Add new features to extract.
-    //FSIV_LBP=2,
-    //FSIV_BOVW=3,
-    //....
+    
 } FEATURE_IDS;
 
 /**
