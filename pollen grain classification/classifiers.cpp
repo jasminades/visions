@@ -7,17 +7,11 @@ fsiv_create_knn_classifier(int K)
 {
     cv::Ptr<cv::ml::KNearest> knn = cv::ml::KNearest::create();
 
-    //TODO: Create a KNN classifier.
-    //Set algorithm type to BRUTE_FORCE.
     knn->setAlgorithmType(cv::ml::KNearest::BRUTE_FORCE);
     
-    //Set it as a classifier (setIsClassifier)
     knn->setIsClassifier(true);
 
-    //Set hyperparameter K.
     knn->setDefaultK(K);
-
-    //
 
     CV_Assert(knn != nullptr);
     return knn;
@@ -31,19 +25,16 @@ fsiv_create_svm_classifier(int Kernel,
                            float gamma)
 {
     cv::Ptr<cv::ml::SVM> svm = cv::ml::SVM::create();
-    //TODO: Create an SVM classifier.
-    //Set algorithm type to C_SVC.
+   
     svm->setType(cv::ml::SVM::C_SVC);
 
-    //Set it as a classifier (setIsClassifier)
     svm->setKernel(Kernel);
     
-    //Set hyperparameters: C, kernel, Gamma, Degree.
     svm->setC(C);
     svm->setDegree(degree);
     svm->setGamma(gamma);
 
-    //
+
     CV_Assert(svm!=nullptr);
     return svm;
 }
@@ -54,14 +45,10 @@ fsiv_create_rtrees_classifier(int V,
                               float E)
 {
     cv::Ptr<cv::ml::RTrees> rtrees = cv::ml::RTrees::create();
-    // TODO: Create an RTrees classifier.
-    // REMEMBER: the parameters T and E are set using a cv::TermCriteria.
-    // @see opencv docs.
 
     rtrees->setActiveVarCount(V);
     rtrees->setTermCriteria(cv::TermCriteria(cv::TermCriteria::MAX_ITER + cv::TermCriteria::EPS, T, E));
 
-    //
     CV_Assert(rtrees!=nullptr);
     return rtrees;
 }
@@ -72,11 +59,9 @@ fsiv_train_classifier(cv::Ptr<cv::ml::StatModel>& clf,
     cv::Mat const& X, cv::Mat const& y)
 {
     CV_Assert(clf != nullptr);   
-
-    //TODO: train the classifier.    
+  
     clf->train(X, cv::ml::ROW_SAMPLE, y);
 
-    //
     CV_Assert(clf->isTrained());    
 }
 
@@ -86,15 +71,11 @@ fsiv_predict_labels(cv::Ptr<cv::ml::StatModel>& clf, cv::Mat const& X)
     CV_Assert(clf != nullptr);
     CV_Assert(clf->isTrained());
     cv::Mat predictions;
-    
-    // TODO: compute the predictions.
-    // Remember: convert the type of predicted labels to int32.
-
+   
     clf->predict(X, predictions);
 
     predictions.convertTo(predictions, CV_32SC1);
 
-    //
     CV_Assert(predictions.rows==X.rows);
     CV_Assert(predictions.type()==CV_32SC1);
     return predictions;
@@ -126,12 +107,8 @@ fsiv_load_knn_classifier_model(const std::string &model_fname)
 {
     cv::Ptr<cv::ml::StatModel> clsf;
 
-    // TODO: load a KNN classifier.
-    // Hint: use the generic interface cv::Algorithm::load< classifier_type >
-
     cv::Ptr<cv::ml::KNearest> knn = cv::Algorithm::load<cv::ml::KNearest>(model_fname);
     clsf = knn;
-    //
 
     CV_Assert(clsf != nullptr);
     return clsf;
@@ -142,11 +119,8 @@ fsiv_load_svm_classifier_model(const std::string &model_fname)
 {
     cv::Ptr<cv::ml::StatModel> clsf;
 
-    // TODO: load a SVM classifier.
-    // Hint: use the generic interface cv::Algorithm::load< classifier_type >
     cv::Ptr<cv::ml::SVM> svm = cv::Algorithm::load<cv::ml::SVM>(model_fname);
     clsf = svm;
-    //
 
     CV_Assert(clsf != nullptr);
     return clsf;
@@ -157,11 +131,8 @@ fsiv_load_rtrees_classifier_model(const std::string &model_fname)
 {
     cv::Ptr<cv::ml::StatModel> clsf;
 
-    // TODO: load a RTrees classifier.
-    // Hint: use the generic interface cv::Algorithm::load< classifier_type >
     cv::Ptr<cv::ml::RTrees> rtrees = cv::Algorithm::load<cv::ml::RTrees>(model_fname);
     clsf = rtrees;
-    //
 
     CV_Assert(clsf != nullptr);
     return clsf;
