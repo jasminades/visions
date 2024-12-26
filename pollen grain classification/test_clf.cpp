@@ -1,9 +1,3 @@
-/*!
- This program applies a trained model to test samples and computes its accuracy.
-
- 2024: UPTATED by Rafael Berral
-
-*/
 
 #include <iostream>
 #include <sstream>
@@ -126,8 +120,7 @@ int main(int argc, char *const *argv)
         float size_score = std::max(0.0, 1.0 - (model_size_mb / (4.0 * 45.06)));
         std::cout << "Size score max(0.0, 1.0-(model_size_mb/dataset_size_mb)) = "
                   << size_score << std::endl;
-        //std::cout << "Test final score 2*(acc*size_score)/(acc+size_score) = "
-        //          << (2.0 * acc * size_score) / (acc + size_score) << std::endl;
+      
       }
       else
         throw std::runtime_error("Error: could not open the file " + model_fname);
