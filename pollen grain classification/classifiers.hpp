@@ -3,23 +3,10 @@
 #include<opencv2/core.hpp>
 #include<opencv2/ml.hpp>
 
-/**
- * @brief Create a KNN classifier.
- *  
- * @param K specifies how many neighbors are used to class a new sample.
- * @return the created classifier.
- */
+
 cv::Ptr<cv::ml::StatModel> fsiv_create_knn_classifier(int K);
 
-/**
- * @brief Create a SVM classifier.
- * 
- * @param Kernel is the kernel to use. @see SVM::KernelTypes.
- * @param C set the tolerance parameter.
- * @param degree set the degree if a polynomial kernel is used.
- * @param gamma set the gamma parameter if RBF kernel is used.
- * @return the created classifier. 
- */
+
 cv::Ptr<cv::ml::StatModel> fsiv_create_svm_classifier(int Kernel,
                                                       float C,
                                                       float degree,
